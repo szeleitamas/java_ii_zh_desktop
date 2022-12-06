@@ -54,21 +54,7 @@ public class GrafikusController {
         gp1.setVisible(true);
         gp1.setManaged(true);
     }
-    void Create(){
-        Session session = factory.openSession();
-        Transaction t = session.beginTransaction();
-        Np np=new Np(tfnev.getText(), (tfigazgato.getText()), Integer.parseInt(tfkinevezes.getText()));
-        session.save(np);
-        t.commit();
-    }
 
-    @FXML void bt1Click(){
-        Create();
-        ElemekTörlése();
-        lb1.setVisible(true);
-        lb1.setManaged(true);
-        lb1.setText("Adatok beírva az adatbázisba");
-    }
     @FXML protected void menuReadClick() {
         ElemekTörlése();
         tv1.setVisible(true);
@@ -95,10 +81,32 @@ public class GrafikusController {
 
     @FXML protected void menuRead2Click() {
     }
+
+    void Create(){
+        Session session = factory.openSession();
+        Transaction t = session.beginTransaction();
+        Np np=new Np(tfnev.getText(), (tfigazgato.getText()), Integer.parseInt(tfkinevezes.getText()));
+        session.save(np);
+        t.commit();
+    }
+    @FXML void bt1Click(){
+        Create();
+        ElemekTörlése();
+        lb1.setVisible(true);
+        lb1.setManaged(true);
+        lb1.setText("Adatok beírva az adatbázisba");
+    }
+
     @FXML protected void menuUpdateClick() {
     }
     @FXML protected void menuDeleteClick() {
     }
+
+
+
+
+
+
     @FXML protected void Rest1CreateClick() {
     }
     @FXML protected void Rest1ReadClick() {

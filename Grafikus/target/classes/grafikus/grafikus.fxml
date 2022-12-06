@@ -69,7 +69,7 @@
                     <MenuItem text="Grafikon" onAction="#SoapGrafikonClick"/>
                 </items>
             </Menu>
-            <Menu text="Adatbanyaszat">
+            <Menu text="Adatbányászat">
                 <items>
                     <MenuItem text="Dontesifa" onAction="#AdatbanyaszatDontesifaClick"/>
                 </items>
@@ -80,7 +80,7 @@
                     <MenuItem text="Algoritmus2" onAction="#AdatbanyaszatAlgoritmus2Click"/>
                 </items>
             </Menu>
-            <Menu text="Egyeb">
+            <Menu text="Egyéb">
                 <items>
                     <MenuItem text="Parhuzamos" onAction="#EgyebParhuzamosClick"/>
                 </items>
