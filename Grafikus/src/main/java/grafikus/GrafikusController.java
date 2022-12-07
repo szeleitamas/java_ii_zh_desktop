@@ -27,9 +27,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class GrafikusController {
-    @FXML private Label lb1;
-    @FXML private GridPane gp1;
-    @FXML private TableView tv1;
+
     @FXML private TextField tfnev, tfigazgato, tfkinevezes;
     @FXML private TableColumn<Np, String> IDCol;
     @FXML private TableColumn<Np, String> nevCol;
@@ -39,17 +37,15 @@ public class GrafikusController {
     public ComboBox cb1;
     @FXML
     private ComboBox cb2;
-    @FXML private Label lb2;
-    @FXML private GridPane gp2, gp5, gp6, gp7, gp8, gp9;
+    @FXML private TableView tv1;
+    @FXML private Label lb1, lb2;
+    @FXML private GridPane gp1, gp2, gp5, gp6, gp7, gp8, gp9, gp10, gp11, gp12, gp13, gp14, gp15, gp16;
     @FXML public TextArea ta1, ta2, ta3, ta4;
     @FXML private TextField tf6, tf7, tf8, tf9, tf10, tf11, tf12, tf13, tf14, tf15, tf16;
 
 
     @FXML private TextField unev, uigazgato, ukinevezes;
     SessionFactory factory;
-    Connection connection;
-    Statement statement;
-    PreparedStatement preparedStatement;
     final String token = "83edfa60bcf34796df2da5e4eed53785a49f2539408e95ca23e241bfdef64dec";
     HttpsURLConnection httpsURLConnection;
     @FXML void initialize(){
@@ -60,24 +56,41 @@ public class GrafikusController {
     void ElemekTörlése(){
         lb1.setVisible(false);
         lb1.setManaged(false);
-        gp1.setVisible(false);
-        gp1.setManaged(false);
+
         tv1.setVisible(false);
         tv1.setManaged(false);
         lb2.setVisible(false);
         lb2.setManaged(false);
+        gp1.setVisible(false);
+        gp1.setManaged(false);
         gp2.setVisible(false);
         gp2.setManaged(false);
         gp5.setVisible(false);
         gp5.setManaged(false);
         gp6.setVisible(false);
         gp6.setManaged(false);
+        gp7.setVisible(false);
+        gp7.setManaged(false);
         gp8.setVisible(false);
         gp8.setManaged(false);
         gp9.setVisible(false);
         gp9.setManaged(false);
-        gp7.setVisible(false);
-        gp7.setManaged(false);
+        gp10.setVisible(false);
+        gp10.setManaged(false);
+        gp11.setVisible(false);
+        gp11.setManaged(false);
+        gp12.setVisible(false);
+        gp12.setManaged(false);
+        gp13.setVisible(false);
+        gp13.setManaged(false);
+        gp14.setVisible(false);
+        gp14.setManaged(false);
+        gp15.setVisible(false);
+        gp15.setManaged(false);
+        gp16.setVisible(false);
+        gp16.setManaged(false);
+
+
     }
     @FXML protected void menuCreateClick() {
         ElemekTörlése();
@@ -283,19 +296,54 @@ public class GrafikusController {
 
 
     @FXML protected void Rest2DeleteClick() {
+        ElemekTörlése();
+        clearControlUIData(tf16);
+        ta4.setText("");
+        gp13.setVisible(true);
+        gp13.setManaged(true);
     }
     @FXML protected void Rest2CreateClick() {
+        ElemekTörlése();
+        clearControlUIData(tf16);
+        ta4.setText("");
+        gp10.setVisible(true);
+        gp10.setManaged(true);
     }
     @FXML protected void Rest2ReadClick() {
+        ElemekTörlése();
+        clearControlUIData(tf16);
+        ta4.setText("");
+        gp11.setVisible(true);
+        gp11.setManaged(true);
     }
     @FXML protected void Rest2UpdateClick() {
+        ElemekTörlése();
+        clearControlUIData(tf16);
+        ta4.setText("");
+        gp12.setVisible(true);
+        gp12.setManaged(true);
     }
 
     @FXML protected void SoapLetoltesClick() {
+        ElemekTörlése();
+        clearControlUIData(tf16);
+        ta4.setText("");
+        gp14.setVisible(true);
+        gp14.setManaged(true);
     }
     @FXML protected void SoapLetoltes2Click() {
+        ElemekTörlése();
+        clearControlUIData(tf16);
+        ta4.setText("");
+        gp15.setVisible(true);
+        gp15.setManaged(true);
     }
     @FXML protected void SoapGrafikonClick() {
+        ElemekTörlése();
+        clearControlUIData(tf16);
+        ta4.setText("");
+        gp16.setVisible(true);
+        gp16.setManaged(true);
     }
     @FXML protected void AdatbanyaszatDontesifaClick() {
     }
