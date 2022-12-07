@@ -221,12 +221,12 @@
     </GridPane>
 
     <GridPane fx:id="gp10">
-    <Label text="RESTapi2 Felhasználó létrehozása!" GridPane.columnIndex="1" GridPane.rowIndex="2" >
-        <font>
-            <Font name="System Bold" size="14.0" />
-        </font>
-    </Label>
-    <Label text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Label text="RESTapi2 Felhasználó létrehozása!" GridPane.columnIndex="1" GridPane.rowIndex="2" >
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
         <Label text="Kidolgozás alatt!" GridPane.columnIndex="1" GridPane.rowIndex="4" />
     </GridPane>
     <GridPane fx:id="gp11">
@@ -292,9 +292,9 @@
             </font>
         </Label>
         <Label text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="A gombra kattintás után az eredményt a Döntési fa.txt -ben találjuk." GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Button mnemonicParsing="false" onAction="#btnAdatbanyaszatDontesiFa" text="Indít" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Label fx:id="döntésiFaMsg" text="" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+        <Label text="A gombra kattintás után az eredményt a Dontesifa.txt -ben találja." GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Button mnemonicParsing="false" onAction="#btnAdatbanyaszatDontesiFa" text="Indít" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+        <Label fx:id="döntésiFaMsg" text="" GridPane.columnIndex="1" GridPane.rowIndex="7" />
     </GridPane>
 
 
