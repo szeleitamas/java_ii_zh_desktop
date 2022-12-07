@@ -2,6 +2,7 @@ package grafikus;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,9 +23,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class GrafikusController {
 
@@ -33,13 +32,14 @@ public class GrafikusController {
     @FXML private TableColumn<Np, String> nevCol;
     @FXML private TableColumn<Np, String> igazgatoCol;
     @FXML private TableColumn<Np, String> kinevezesCol;
+    @FXML public Label döntésiFaMsg;
     @FXML
     public ComboBox cb1;
     @FXML
     private ComboBox cb2;
     @FXML private TableView tv1;
     @FXML private Label lb1, lb2, lb3;
-    @FXML private GridPane gp1, gp2, gp5, gp4, gp6, gp7, gp8, gp9, gp10, gp11, gp12, gp13, gp14, gp15, gp16;
+    @FXML private GridPane gp1, gp2, gp5, gp4, gp6, gp7, gp8, gp9, gp10, gp11, gp12, gp13, gp14, gp15, gp16, gp17;
     @FXML public TextArea ta1, ta2, ta3, ta4;
     @FXML private TextField tf6, tf7, tf8, tf9, tf10, tf11, tf12, tf13, tf14, tf15, tf16;
 
@@ -96,7 +96,8 @@ public class GrafikusController {
         gp15.setManaged(false);
         gp16.setVisible(false);
         gp16.setManaged(false);
-
+        gp17.setVisible(false);
+        gp17.setManaged(false);
 
     }
     @FXML protected void menuCreateClick() {
@@ -379,6 +380,31 @@ public class GrafikusController {
         gp16.setManaged(true);
     }
     @FXML protected void AdatbanyaszatDontesifaClick() {
+        ElemekTörlése();
+        döntésiFaMsg.setText("");
+        gp17.setVisible(true);
+        gp17.setManaged(true);
+    }
+
+    protected void setTimerForLabel(Label label) {
+        Timer tm = new Timer();
+        tm.schedule(new TimerTask(){
+            @Override
+            public void run() {
+                Platform.runLater(() -> {
+                    label.setText("");
+                });
+            }
+        },3600);
+    }
+
+    @FXML
+    protected void btnAdatbanyaszatDontesiFa() {
+        String filename = "soybean.arff";
+        int classIndex = 20;
+        new DontesiFa(filename, classIndex);
+        döntésiFaMsg.setText("OK!");
+        setTimerForLabel(döntésiFaMsg);
     }
     @FXML protected void AdatbanyaszatAlgoritmusClick() {
     }

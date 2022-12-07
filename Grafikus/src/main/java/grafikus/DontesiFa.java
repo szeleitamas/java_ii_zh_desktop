@@ -9,11 +9,11 @@ import java.io.PrintWriter;
 import java.util.Random;
 public class DontesiFa {
 
-    DontesiFa(String fájlNév, int classIndex){
+    DontesiFa(String filename, int classIndex){
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(fájlNév));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(filename));
             Instances instances = new Instances(bufferedReader);
-            PrintWriter kiir = new PrintWriter("Dontesifa.txt");
+            PrintWriter kiir = new PrintWriter("dontesifa.txt");
             instances.setClassIndex(classIndex);
             Instances tanító, kiértékelő;
             J48 classifier;
