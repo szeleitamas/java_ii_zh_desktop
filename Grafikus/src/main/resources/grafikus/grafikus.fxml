@@ -9,6 +9,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
 <VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="grafikus.GrafikusController">
     <MenuBar fx:id="menuBar">
@@ -114,6 +115,51 @@
         <TextField fx:id="ukinevezes" GridPane.rowIndex="2" GridPane.columnIndex="1"></TextField>
         <Button onAction="#bt2Click" GridPane.rowIndex="3" GridPane.columnIndex="1" >Update</Button>
     </GridPane>
-    <TableView fx:id="tv2" >
-    </TableView>
+    <GridPane fx:id="gp6">
+            <Label text="Felhasználó lekérés a https://gorest.co.in szerverről!" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Adjon meg egy ID-t. Üres ID esetén mindenkit listáz a program." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <TextField fx:id="tf6" promptText="User ID" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#btnRest1ReadClick" text="User lekérdezés" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Lekért felhasználó adatok :" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextArea fx:id="ta1" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+    </GridPane>
+    <GridPane fx:id="gp7">
+            <Label text="Felhasználó létrehozása a https://gorest.co.in szerveren!" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Név:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tf7" promptText="Név" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Nem:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="tf8" promptText="Nem" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="E-mail:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="tf9" promptText="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="Státusz:" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="tf10" promptText="Státusz" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Button mnemonicParsing="false" onAction="#btnRest1CreateClick" text="Felhasználó létrehozása" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label text="A létrehozás eredménye:" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <TextArea fx:id="ta2" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+    </GridPane>
+    <GridPane fx:id="gp8">
+            <Label text="Felhasználó módosítása a https://gorest.co.in szerveren!" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="ID:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tf11" promptText="Id" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Név:" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="tf12" promptText="Név" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Nem:" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="tf13" promptText="Nem" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="E-mail:" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="tf14" promptText="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label text="Státusz:" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <TextField fx:id="tf15" promptText="Státusz" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <Button mnemonicParsing="false" onAction="#btnRest1UpdateClick" text="Felhasználó módosítása" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+            <Label text="A módosítás eredménye:" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <TextArea fx:id="ta3" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+    </GridPane>
+    <GridPane fx:id="gp9">
+            <Label text="Felhasználó törlése a https://gorest.co.in szerverről!" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Felhasználó Id?:" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tf16" promptText="id" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#btnRest1DeleteClick" text="Felhasználó törlése" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="A törlés eredménye:" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextArea fx:id="ta4" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+    </GridPane>
 </VBox>
