@@ -110,9 +110,15 @@
         <Button onAction="#bt1Click" GridPane.rowIndex="7" GridPane.columnIndex="1" >Küldés</Button>
     </GridPane>
     <TableView fx:id="tv1" >
+        <Label text="Tábla adatainak megjelenítése!" GridPane.columnIndex="0" GridPane.rowIndex="2" >
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
     </TableView>
 
-    <Label fx:id="lb2">Update.(3-as id adatait változtatja meg mindig.</Label>
+    <Label fx:id="lb2">Adat módosítás</Label>
     <GridPane fx:id="gp2" hgap="2" vgap="4">
         <Label text="Adat módosítás!" GridPane.columnIndex="0" GridPane.rowIndex="2" >
             <font>
@@ -120,14 +126,29 @@
             </font>
         </Label>
         <Label text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-        <Label GridPane.rowIndex="4" GridPane.columnIndex="0">Nemzeti Park Név:</Label>
-        <TextField fx:id="unev" GridPane.rowIndex="4" GridPane.columnIndex="1"></TextField>
-        <Label GridPane.rowIndex="5" GridPane.columnIndex="0">Igazgató:</Label>
-        <TextField fx:id="uigazgato" GridPane.rowIndex="5" GridPane.columnIndex="1"></TextField>
-        <Label GridPane.rowIndex="6" GridPane.columnIndex="0">Kinevezés:</Label>
-        <TextField fx:id="ukinevezes" GridPane.rowIndex="6" GridPane.columnIndex="1"></TextField>
-        <Button onAction="#bt2Click" GridPane.rowIndex="7" GridPane.columnIndex="1" >Update</Button>
+        <Label text="Válassza ki, melyik ID-t szeretné módosítani" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <ComboBox fx:id="cb1" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <Label text="" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <Button fx:id="bt1" onAction="#bt2Click" GridPane.columnIndex="0" GridPane.rowIndex="7">Küldés</Button>
     </GridPane>
+
+    <Label fx:id="lb3">Adat törlés</Label>
+    <GridPane fx:id="gp4" hgap="2" vgap="4">
+        <Label text="Adat Törlés!" GridPane.columnIndex="0" GridPane.rowIndex="2" >
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label text="" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Label text="Válassza ki, melyik ID-t szeretné törölni" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <ComboBox fx:id="cb2" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <Label text="" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <Button fx:id="bt2" onAction="#bt4Click" GridPane.columnIndex="0" GridPane.rowIndex="7">Küldés</Button>
+    </GridPane>
+
+
+
+
     <GridPane fx:id="gp6">
         <Label text="RESTapi Felhasználó lekérése!" GridPane.columnIndex="1" GridPane.rowIndex="2" >
             <font>
@@ -263,6 +284,8 @@
         <Label text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
         <Label text="Kidolgozás alatt!" GridPane.columnIndex="1" GridPane.rowIndex="4" />
     </GridPane>
+
+
 
 
     <GridPane fx:id="gp5">

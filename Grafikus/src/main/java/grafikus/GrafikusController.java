@@ -38,8 +38,8 @@ public class GrafikusController {
     @FXML
     private ComboBox cb2;
     @FXML private TableView tv1;
-    @FXML private Label lb1, lb2;
-    @FXML private GridPane gp1, gp2, gp5, gp6, gp7, gp8, gp9, gp10, gp11, gp12, gp13, gp14, gp15, gp16;
+    @FXML private Label lb1, lb2, lb3;
+    @FXML private GridPane gp1, gp2, gp5, gp4, gp6, gp7, gp8, gp9, gp10, gp11, gp12, gp13, gp14, gp15, gp16;
     @FXML public TextArea ta1, ta2, ta3, ta4;
     @FXML private TextField tf6, tf7, tf8, tf9, tf10, tf11, tf12, tf13, tf14, tf15, tf16;
 
@@ -52,19 +52,26 @@ public class GrafikusController {
         ElemekTörlése();
         Configuration cfg = new Configuration().configure("hibernate.cfg.xml");
         factory = cfg.buildSessionFactory();
+        cb1.getItems().addAll("1", "2", "3","4", "5", "6");
+        cb1.getSelectionModel().select("1");
+        cb2.getItems().addAll("1", "2", "3","4", "5", "6");
+        cb2.getSelectionModel().select("1");
     }
     void ElemekTörlése(){
         lb1.setVisible(false);
         lb1.setManaged(false);
-
-        tv1.setVisible(false);
-        tv1.setManaged(false);
+        lb3.setVisible(false);
+        lb3.setManaged(false);
         lb2.setVisible(false);
         lb2.setManaged(false);
+        tv1.setVisible(false);
+        tv1.setManaged(false);
         gp1.setVisible(false);
         gp1.setManaged(false);
         gp2.setVisible(false);
         gp2.setManaged(false);
+        gp4.setVisible(false);
+        gp4.setManaged(false);
         gp5.setVisible(false);
         gp5.setManaged(false);
         gp6.setVisible(false);
@@ -139,11 +146,37 @@ public class GrafikusController {
         lb1.setManaged(true);
         lb1.setText("Adatok beírva az adatbázisba");
     }
+    @FXML
+    protected void menuUpdateClick() {
+        ElemekTörlése();
+        gp2.setVisible(true);
+        gp2.setManaged(true);
+    }
 
-    @FXML protected void menuUpdateClick() {
-    }
     @FXML protected void menuDeleteClick() {
+        ElemekTörlése();
+        gp4.setVisible(true);
+        gp4.setManaged(true);
     }
+    void Delete(){
+        Session session = factory.openSession();
+        Transaction t = session.beginTransaction();
+        Np np = session.load(Np.class, 3);
+        session.delete(np);
+        t.commit();
+    }
+
+    @FXML void bt4Click(){
+        Delete();
+        ElemekTörlése();
+        lb3.setVisible(true);
+        lb3.setManaged(true);
+        cb2.getItems().removeAll(cb2.getItems());
+        cb2.getItems().addAll("1", "2", "3","4", "5", "6");
+        cb2.getSelectionModel().select("1");
+        lb3.setText("Adatok törölve az adatbázisban");
+    }
+
 
 
 
@@ -358,7 +391,6 @@ public class GrafikusController {
         gp5.setVisible(true);
         gp5.setManaged(true);
     }
-
     @FXML
     protected void btnParhuzamosClick() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("parhuzamos.fxml"));
