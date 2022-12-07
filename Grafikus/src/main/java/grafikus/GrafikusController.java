@@ -1,8 +1,16 @@
 package grafikus;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -16,6 +24,7 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class GrafikusController {
     @FXML private Label lb1;
@@ -31,7 +40,7 @@ public class GrafikusController {
     @FXML
     private ComboBox cb2;
     @FXML private Label lb2;
-    @FXML private GridPane gp2, gp6, gp7, gp8, gp9;
+    @FXML private GridPane gp2, gp5, gp6, gp7, gp8, gp9;
     @FXML public TextArea ta1, ta2, ta3, ta4;
     @FXML private TextField tf6, tf7, tf8, tf9, tf10, tf11, tf12, tf13, tf14, tf15, tf16;
 
@@ -59,23 +68,16 @@ public class GrafikusController {
         lb2.setManaged(false);
         gp2.setVisible(false);
         gp2.setManaged(false);
-        tv1.setVisible(false);
-        tv1.setManaged(false);
-
+        gp5.setVisible(false);
+        gp5.setManaged(false);
         gp6.setVisible(false);
         gp6.setManaged(false);
         gp8.setVisible(false);
         gp8.setManaged(false);
         gp9.setVisible(false);
         gp9.setManaged(false);
-
-        tv1.setVisible(false);
-        tv1.setManaged(false);
-
         gp7.setVisible(false);
         gp7.setManaged(false);
-        tv1.setVisible(false);
-        tv1.setManaged(false);
     }
     @FXML protected void menuCreateClick() {
         ElemekTörlése();
@@ -301,8 +303,23 @@ public class GrafikusController {
     }
     @FXML protected void AdatbanyaszatAlgoritmus2Click() {
     }
-    @FXML protected void EgyebParhuzamosClick() {
+
+    @FXML
+    protected void EgyebParhuzamosClick() {
+        ElemekTörlése();
+        gp5.setVisible(true);
+        gp5.setManaged(true);
     }
+
+    @FXML
+    protected void btnParhuzamosClick() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("parhuzamos.fxml"));
+        Scene scene = new Scene(root, 400, 200);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
     @FXML protected void EgyebStreamClick() {
     }
 
